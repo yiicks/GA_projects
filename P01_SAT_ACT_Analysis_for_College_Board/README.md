@@ -1,7 +1,5 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 1: Standardized Test Analysis
 
-<font color = '#808080' size = 2> <b> Part 1 </b>: Part 1 requires knowledge of basic Python. </font> <br>
-
 ## Executive Summary
 
 Our team of consulting interns have analysed past year data cross-state data in the United States from 2017 to 2019. This analysis takes datasets of participation rates and total/composite scores for the SAT and the ACT across states and years 2017 to 2019.
