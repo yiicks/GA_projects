@@ -1,0 +1,21 @@
+Model,Type,ROC-AUC,Precision,Recall,F1,clsf__ccp_alpha,clsf__max_depth,clsf__n_estimators,clsf__learning_rate,clsf__C,clsf__max_iter,clsf__penalty,smpl__k_neighbors,smpl__sampling_strategy,clsf__gamma,clsf__reg_alpha,clsf__min_samples_leaf,Kaggle_AUC
+"RandomForestClassifier(n_jobs=4, random_state=42)",reg,0.8560812880080502,0.75,0.05263157894736842,0.09836065573770492,0.0,10.0,300.0,,,,,,,,,,0.712
+GradientBoostingClassifier(random_state=42),reg,0.835177407358796,0.5238095238095238,0.09649122807017543,0.16296296296296295,0.0,7.0,350.0,0.01,,,,,,,,,0.718
+"LogisticRegression(random_state=42, solver='liblinear')",smote,0.8110141313383208,0.12339331619537275,0.8421052631578947,0.21524663677130046,,,,,0.1,50.0,l2,5.0,,,,,0.685
+GradientBoostingClassifier(random_state=42),smote,0.8355011593822462,0.19063545150501673,0.5,0.2760290556900727,0.0,7.0,150.0,0.05,,,,,,,,,0.697
+GradientBoostingClassifier(random_state=42),smotetomek,0.8372577328608304,0.1967741935483871,0.5350877192982456,0.28773584905660377,0.0,7.0,150.0,0.05,,,,,all,,,,0.7
+"RandomForestClassifier(n_jobs=4, random_state=42)",smote,0.8292689329308308,0.13513513513513514,0.7894736842105263,0.2307692307692308,0.0,7.0,250.0,,,,,5.0,,,,,0.716
+"XGBClassifier(base_score=None, booster=None, colsample_bylevel=None,
+              colsample_bynode=None, colsample_bytree=None,
+              enable_categorical=False, eval_metric='auc', gamma=None,
+              gpu_id=None, importance_type=None, interaction_constraints=None,
+              learning_rate=None, max_delta_step=None, max_depth=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              n_estimators=100, n_jobs=None, num_parallel_tree=None,
+              predictor=None, random_state=42, reg_alpha=None, reg_lambda=None,
+              scale_pos_weight=None, subsample=None, tree_method=None,
+              use_label_encoder=False, validate_parameters=None,
+              verbosity=None)",smotetomek,0.840869317933237,0.20521172638436483,0.5526315789473685,0.2992874109263658,,5.0,150.0,0.125,,,,,all,0.15,10.0,,0.707
+GradientBoostingClassifier(random_state=42),pca,0.8311130069562935,0.38461538461538464,0.13157894736842105,0.196078431372549,0.0,7.0,350.0,0.01,,,,,,,,,0.648
+RandomForestClassifier(random_state=42),pcasmote,0.8284201776261102,0.16056910569105692,0.6929824561403509,0.2607260726072608,,7.0,200.0,,,,,,,,,4.0,0.698
+"LogisticRegression(random_state=42, solver='liblinear')",pcasmote,0.8086100538128363,0.1323529411764706,0.7894736842105263,0.22670025188916876,,,,,0.1,200.0,l1,,,,,,0.676
