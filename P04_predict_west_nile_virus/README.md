@@ -1,7 +1,8 @@
 # Project 4: Predict and Manage West Nile Virus
----
+
+
 ## Introduction
----
+
 **West Nile Virus still plagues citizens in Chicago, Illinois, today.**
 
 To make Chicago homes safer for all, our team of Data Scientists have 
@@ -9,6 +10,7 @@ To make Chicago homes safer for all, our team of Data Scientists have
 - analyzed available data to predict likelihood of incidence of the disease, and 
 
 - will present a preliminary cost-benefit analysis to inform health authorities on Zenivex spray-based interventions. (see slides)
+---
 
 #### Data
 The Authorities have provided us with 4 datasets:
@@ -59,6 +61,6 @@ The Authorities have provided us with 4 datasets:
 ```
 
 **Across the Project**
-1. [Cleaning, Exploratory Visualizations, and Export]('./code/01_cleaning_eda.ipynb)**
-2. [Visualizations via maps]('./code/02_maps.ipynb')
-3. [Models and Conclusions]('./code/03_models.ipynb')
+1. [Cleaning, Exploratory Visualizations, and Export](./code/01_cleaning_eda.ipynb)
+2. [Visualizations via maps](./code/02_maps.ipynb)
+3. [Models and Conclusions](./code/03_models.ipynb)
