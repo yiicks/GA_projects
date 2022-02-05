@@ -14,10 +14,10 @@ To make Chicago homes safer for all, our team of Data Scientists have
 
 #### Data
 The Authorities have provided us with 4 datasets:
-1. [Weather]('./datasets/weather.csv'),
-2. [Spray]('./datasets/spray.csv'),
-3. [Training]('./datasets/train.csv'),
-4. [Test]('./datasets/test.csv'), and
+1. [Weather](./datasets/weather.csv),
+2. [Spray](./datasets/spray.csv),
+3. [Training](./datasets/train.csv),
+4. [Test](./datasets/test.csv), and
 5. Mapping resources.
 ---
 
