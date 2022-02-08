@@ -20,6 +20,37 @@ The Authorities have provided us with 4 datasets:
 4. [Test](./datasets/test.csv), and
 5. Mapping resources.
 ---
+#### Data Dictionary
+We have processed this data into the following fields:
+
+|Feature|Type|Dataset|Description|
+|---|---|---|---|
+|date|<i>datetime</i>|final_train|Date of observation| 
+|species|<i>object</i>|final_train|Mosquito species| 
+|latitude|<i>float</i>|final_train|Latitude of observation| 
+|longitude|<i>float</i>|final_train|Longitude of observation| 
+|nummosquitos|<i>int</i>|final_train|Num of mosquitoes observed| 
+|wnvpresent|<i>int</i>|final_train|Presence of west nile virus where 1 is present and 0 is not present| 
+|longitude|<i>float</i>|final_train|Longitude of observation| 
+|year|<i>int</i>|final_train|Year of observation|
+|weekofyear|<i>int</i>|final_train|Week of the year|
+|dum_species|<i>int</i>|final_train|Species where west nile virus might be present|
+|tavg|<i>float</i>|final_train|Average temperature (celsius) of each day of the observation|
+|preciptotal|<i>float</i>|final_train|Total precipitation recorded (inches) on each day of the observation|
+|stnpressure|<i>float</i>|final_train|Average station pressure (inches of HG)|
+|sealevel|<i>float</i>|final_train|Average sea level pressure (inches of HG)|
+|resultspeed|<i>float</i>|final_train|Resultant wind speed (miles per hour)|
+|resultdir|<i>float</i>|final_train|Resultant wind direction (To tens of whole degrees)|
+|resultspeed|<i>float</i>|final_train|Resultant wind speed (miles per hour)|
+|avgspeed|<i>float</i>|final_train|Average speed (miles per hour)|
+|humidity|<i>float</i>|final_train|Relative humidity, calculated using tavg in celsius and dewpoint|
+|daylength|<i>float</i>|final_train|Length of the day, calculated using sunrise and sunset|
+|tavg_lag14|<i>float</i>|final_train|Average temperature (celsius), with 14 lag days|
+|humidity_lag14|<i>float</i>|final_train|Relative humidity, with 14 lag days|
+|preciptotal_lag14|<i>float</i>|final_train|Total precipitation recorded (inches), with 14 lag days|
+|resultspeed_lag14|<i>float</i>|final_train|Resultant wind speed (miles per hour), with 14 lag days|
+
+---
 
 ## Methodology
 
@@ -49,8 +80,8 @@ Expend the number of columns by multiplying them, then used PCA to reduce them t
 Adresses the class imbalance and tries to improve recall scores which, without SMOTEing, are abysmally low.
 
 
-Run various models in each of the 4 categories, use GridSearchCV for hyper-parameter tuning. In addition to 
-Choose the production model based on the metrics above: ROC-AUC we get from submitting the model to Kaggle, and recall from our own test set we obtained via train-test-split.
+Run various models in each of the 4 categories, use GridSearchCV for hyper-parameter tuning. 
+Choose the production model based on the metrics mentioned above: ROC-AUC we get from submitting the model to Kaggle, and recall from our own test set we obtained via train-test-split.
 
 ### Conclusion
 
@@ -58,21 +89,21 @@ Choose the production model based on the metrics above: ROC-AUC we get from subm
 
 1. Our charts made during EDA section show no significant decrease in either the mosquito number nor in the incidence of WnV after previous spraying;
 
-2. Under reasonable assumptions, we can only afford to spray 15% of the city area for 8 weeks during the peak mosquito season, which wouldn't make much of a difference, as mosquitoes from other parts of the city could migrate to replace them.
+2. Under reasonable assumptions, we can only afford to spray 15% of the city area for 8 weeks during the peak mosquito season, which wouldn't make much of a difference, as mosquitoes from other parts of the city could easily migrate to replace them.
 
 **Still, we believe and recommend that limited spraying should take place.**
 
-1. Even assuming only an area the size of 15% of the Chicago downtown can be sprayed in any given week, we could use our model to maximize the efficiency of such a limited spray, by focusing on the areas in our model that give rise to highest 'WNV present' odds. (model.predic_proba)
+1. Even assuming only an area the size of 15% of the Chicago downtown can be sprayed in any given week, we could use our model to maximize the efficiency of such a limited spray, by focusing on the areas in our model that give rise to highest 'WNV present' odds. (from model.predic_proba)
 
 2. Scientifically speaking, the spray does kill off mosquitoes and their larvae, even if our charts/data do not show it. We choose to believe the science and use spraying as a mosquito-reduction technique. We will however use our findings of spray's lack of success, by deciding not spend too much money on it.
 
-3. It is important for a city government to make actions that show that it cares about its people; standing idly by while the virus affects its people is not an option.
+3. It is important for a city government to take actions that show that it cares about its people; standing idly by while the virus affects its people is not an option.
 
-4. Lastly, even though spraying does not have substantial effects now, that does not mean that it will remain so in the future, especially if West Nile virus were to start spreading at faster rates. That is why it is important to have a well-oiled, functioning spraying program in place now, which can then easily be ramped up in the future if a sudden need were to arise.
+4. Lastly, even though spraying does not have substantial effects now, that does not mean that it will remain so in the future, especially if West Nile virus were to start spreading at faster rates. That is why it is important to have a well-oiled and functioning spraying program in place now, which can then easily be ramped up in the future if need were suddenly to arise.
 
 ### Beyond the cost-benefit: What's next?
 
-The only way to substantially improve our model and make use of City's limited spraying finds, is to extend the model in such a way so that it is able to pinpoint the micro-location of where the WNV mosquitoes will be present. This would include more advanced use of GPS data, as well as teaming up with weather experts and entomologists to model the ways in which mosquitoes move around the city based on atmospheric data and their biological needs. 
+The only way to substantially improve our model and make use of City's limited spraying finds, is to extend the model in such a way so that it is able to pinpoint the exact micro-location of where the WNV mosquitoes will be present. This would include more advanced use of GPS data, as well as teaming up with weather experts and entomologists to model the ways in which mosquitoes move around the city based on atmospheric data and their biological needs. 
 
 ---
 
